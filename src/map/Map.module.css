@@ -1,0 +1,497 @@
+/* ============================================================
+   SVG-xarita: orbita, aloqalar, markaz, tugunlar, hover-kartochka
+   ============================================================ */
+.mapWrap {
+  position: relative;
+  width: 1240px;
+  margin-inline: auto;
+}
+.mapSvg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+.mapWrap:focus {
+  outline: none;
+}
+.zoomLayer {
+  will-change: transform, opacity;
+}
+
+/* ---------- yo‘l ---------- */
+.crumbs {
+  position: absolute;
+  z-index: 6;
+  top: 12px;
+  left: -96px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 6px 14px 6px 6px;
+  border-radius: var(--r-s);
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  animation: tipIn 0.25s var(--ease);
+  max-width: 520px;
+}
+.backBtn {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--r-s);
+  display: grid;
+  place-items: center;
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--gov-deep);
+  transition:
+    background var(--t-fast) var(--ease),
+    transform var(--t-fast) var(--ease);
+}
+.backBtn:hover {
+  background: var(--petrol);
+  transform: translateX(-2px);
+}
+.crumbItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.crumbSep {
+  color: var(--faint);
+  font-size: 13px;
+}
+.crumb {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+  color: var(--gov-deep);
+  padding: 4px 8px;
+  border-radius: var(--r-s);
+  transition: background var(--t-fast) var(--ease);
+  white-space: nowrap;
+}
+button.crumb:hover {
+  background: var(--petrol-soft);
+}
+.crumbCur {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.orbit {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1;
+  stroke-dasharray: 1 7;
+  opacity: 0.16;
+}
+
+/* ---------- aloqalar ---------- */
+.edgeGroup {
+  transition: opacity var(--t-med) var(--ease);
+}
+.edge {
+  fill: none;
+  stroke: var(--petrol);
+  stroke-width: var(--ew, 1.5px);
+  opacity: 0.62;
+  transition:
+    opacity var(--t-med) var(--ease),
+    stroke-width var(--t-med) var(--ease);
+}
+.edgeGroup.hot .edge {
+  stroke: var(--petrol-bright);
+  stroke-width: calc(var(--ew, 1.5px) + 1px);
+  opacity: 1;
+}
+.edgeGroup.rel .edge {
+  opacity: 0.75;
+}
+.edgeGroup.dim .edge {
+  opacity: 0.07;
+}
+.pulseDot {
+  fill: var(--petrol);
+  opacity: 0.9;
+}
+.edgeGroup.dim .pulseDot {
+  opacity: 0.08;
+}
+.edgeGroup.hot .pulseDot {
+  fill: var(--petrol-bright);
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pulses {
+    display: none;
+  }
+}
+
+/* ---------- markaz ---------- */
+.core {
+  cursor: pointer;
+  outline: none;
+}
+.coreDash {
+  fill: none;
+  stroke: var(--brass);
+  stroke-width: 1;
+  opacity: 0.75;
+}
+.coreRule {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1;
+  opacity: 0.3;
+}
+.coreDiscC {
+  stroke: var(--line-strong);
+  stroke-width: 1;
+  transition: transform var(--t-med) var(--ease);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.core:hover .coreDiscC,
+.core:focus-visible .coreDiscC {
+  transform: scale(1.04);
+}
+.core:focus-visible .coreDiscC {
+  stroke: var(--gov);
+  stroke-width: 2;
+}
+.coreIcon {
+  color: var(--brass);
+}
+.coreTitle {
+  font-family: var(--font-display);
+  font-size: 23px;
+  font-weight: 700;
+  fill: var(--ink);
+}
+.coreMeta {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  fill: var(--muted);
+}
+.coreName {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  fill: var(--ink);
+}
+.coreNameSm {
+  font-size: 15px;
+}
+
+/* ---------- tugunlar ---------- */
+.node {
+  cursor: pointer;
+  outline: none;
+  transition: opacity var(--t-med) var(--ease);
+}
+.nodeScale {
+  transition: transform var(--t-med) var(--ease);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.node.hot .nodeScale,
+.node:focus-visible .nodeScale {
+  transform: scale(1.08);
+}
+.node.dim {
+  opacity: 0.34;
+}
+.nodeHalo {
+  fill: var(--petrol-soft);
+  opacity: 0;
+  transition: opacity var(--t-med) var(--ease);
+}
+.node.hot .nodeHalo,
+.node.rel .nodeHalo,
+.node:focus-visible .nodeHalo {
+  opacity: 1;
+}
+.nodeBody {
+  fill: #ffffff;
+  stroke: var(--line-strong);
+  stroke-width: 1.2;
+  transition:
+    stroke var(--t-med) var(--ease),
+    stroke-width var(--t-med) var(--ease);
+}
+.node.hot .nodeBody,
+.node:focus-visible .nodeBody {
+  stroke: var(--petrol);
+  stroke-width: 2.4;
+}
+.node.rel .nodeBody {
+  stroke: var(--petrol);
+  stroke-width: 1.8;
+}
+.nodeIcon {
+  color: var(--gov-deep);
+}
+.nodeGlyph circle {
+  stroke: var(--petrol);
+  fill: var(--petrol);
+}
+.nodeGlyph circle:first-child {
+  fill: none;
+  opacity: 0.7;
+}
+.nodeLabel {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 700;
+  fill: var(--ink);
+  paint-order: stroke;
+  stroke: rgba(245, 244, 240, 0.92);
+  stroke-width: 4px;
+}
+.nodeLabelMulti {
+  font-size: 14.5px;
+}
+.nodeBadge {
+  fill: var(--gov-deep);
+  stroke: #fff;
+  stroke-width: 2;
+}
+.nodeBadgeText {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  fill: #ffffff;
+}
+
+/* ---------- hover-kartochka ---------- */
+.tip {
+  position: absolute;
+  z-index: 5;
+  width: 300px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-top: 3px solid var(--gov-deep);
+  border-radius: var(--r-s);
+  box-shadow: var(--shadow-m);
+  display: grid;
+  row-gap: 5px;
+  pointer-events: none;
+  transform: translate(58px, -50%);
+  animation: tipIn 0.18s var(--ease);
+}
+.tipLeft {
+  transform: translate(calc(-100% - 58px), -50%);
+}
+.tipBelow {
+  transform: translate(58px, 0);
+}
+.tipLeft.tipBelow {
+  transform: translate(calc(-100% - 58px), 0);
+}
+.tipAbove {
+  transform: translate(58px, -100%);
+}
+.tipLeft.tipAbove {
+  transform: translate(calc(-100% - 58px), -100%);
+}
+@keyframes tipIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.tipName {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.tipText {
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.tipCta {
+  margin-top: 2px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gov-deep);
+  font-weight: 600;
+}
+
+/* ============================================================
+   Ma’lumot paneli (o‘ngdan chiqadi)
+   ============================================================ */
+.scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  background: rgba(11, 34, 51, 0.22);
+  animation: tipIn 0.25s var(--ease);
+}
+.panel {
+  position: absolute;
+  z-index: 31;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 560px;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border-left: 1px solid var(--line-strong);
+  border-top: 3px solid var(--brass);
+  box-shadow: var(--shadow-l);
+  animation: panelIn 0.34s var(--ease);
+}
+@keyframes panelIn {
+  from {
+    transform: translateX(40px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+.panelHead {
+  padding: 26px 34px 20px;
+  border-bottom: 1px solid var(--line);
+}
+.panelTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+.panelIndex {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.panelClose {
+  flex: none;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+  color: var(--ink-soft);
+  transition:
+    background var(--t-fast) var(--ease),
+    color var(--t-fast) var(--ease);
+}
+.panelClose:hover {
+  background: var(--gov-deep);
+  color: #fff;
+}
+.panelName {
+  margin-top: 10px;
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.18;
+}
+.panelTagline {
+  margin-top: 10px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.panelBody {
+  flex: 1;
+  overflow-y: auto;
+  padding: 22px 34px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.blockTitle {
+  margin-bottom: 10px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.blockText {
+  font-size: 17.5px;
+  line-height: 1.55;
+  color: var(--ink);
+}
+.blockList {
+  display: grid;
+  gap: 7px;
+}
+.blockList li {
+  position: relative;
+  padding: 9px 14px 9px 34px;
+  font-size: 17px;
+  line-height: 1.4;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r-s);
+}
+.blockList li::before {
+  content: '';
+  position: absolute;
+  left: 14px;
+  top: 17px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--petrol);
+}
+.blockExample {
+  padding: 14px 18px;
+  font-size: 16.5px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  background: var(--plan-soft);
+  border-radius: var(--r-s);
+}
+.blockExample b {
+  display: block;
+  margin-bottom: 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--plan);
+}
+.blockFormula {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  padding: 14px 18px;
+  background: var(--gov-soft);
+  border-radius: var(--r-s);
+}
+.blockFormula strong {
+  flex: none;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 28px;
+  color: var(--gov-deep);
+}
+.blockFormula span {
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}

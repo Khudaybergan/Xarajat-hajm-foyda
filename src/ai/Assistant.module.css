@@ -1,0 +1,291 @@
+/* ============================================================
+   Yordamchi paneli — o‘ng tomondagi yon panel (sahna ichida)
+   ============================================================ */
+.panel {
+  position: absolute;
+  z-index: 40;
+  top: 56px;
+  right: 0;
+  bottom: 60px;
+  width: 440px;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border-left: 1px solid var(--line-strong);
+  box-shadow: var(--shadow-l);
+  animation: in 0.25s var(--ease);
+}
+@keyframes in {
+  from {
+    transform: translateX(24px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+.head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid var(--line);
+}
+.kicker,
+.label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--faint);
+}
+.dot_connecting {
+  background: var(--brass);
+  animation: pulse 1s infinite;
+}
+.dot_ready {
+  background: var(--live);
+}
+.dot_error {
+  background: var(--plan);
+}
+@keyframes pulse {
+  50% {
+    opacity: 0.3;
+  }
+}
+.headBtns {
+  display: flex;
+  gap: 6px;
+}
+.iconBtn {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  color: var(--ink-soft);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+  background: var(--surface);
+  transition:
+    background var(--t-fast) var(--ease),
+    color var(--t-fast) var(--ease);
+}
+.iconBtn:hover:not(:disabled) {
+  background: var(--gov-deep);
+  color: #fff;
+}
+.iconBtn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* ---------- sozlash ---------- */
+.setup {
+  display: grid;
+  gap: 18px;
+  padding: 22px 20px;
+}
+.field {
+  display: grid;
+  gap: 8px;
+}
+.field input,
+.field select,
+.textForm input {
+  height: 42px;
+  padding: 0 12px;
+  font: inherit;
+  font-size: 15px;
+  color: var(--ink);
+  background: var(--surface-2);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+}
+.field small {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+.primary {
+  height: 44px;
+  padding: 0 20px;
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--gov-deep);
+  border-radius: var(--r-s);
+  transition: background var(--t-fast) var(--ease);
+}
+.primary:hover:not(:disabled) {
+  background: var(--petrol);
+}
+.primary:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+/* ---------- transkript ---------- */
+.log {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.empty p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+.chip {
+  padding: 8px 12px;
+  font-size: 14px;
+  color: var(--gov-deep);
+  background: var(--gov-soft);
+  border-radius: var(--r-s);
+  transition: background var(--t-fast) var(--ease);
+}
+.chip:hover:not(:disabled) {
+  background: var(--petrol-soft);
+}
+.chip:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.line {
+  max-width: 92%;
+  padding: 10px 14px;
+  font-size: 15px;
+  line-height: 1.45;
+  border-radius: var(--r-s);
+  animation: rise 0.25s var(--ease) both;
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.line_user {
+  align-self: flex-end;
+  color: #fff;
+  background: var(--gov-deep);
+}
+.line_model {
+  align-self: flex-start;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+}
+.line_tool {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--petrol);
+  background: var(--petrol-soft);
+}
+.line_system {
+  align-self: center;
+  font-size: 13px;
+  color: var(--plan);
+  background: var(--plan-soft);
+}
+.speaking {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  color: var(--live);
+}
+.error {
+  margin: 0 20px 8px;
+  padding: 10px 12px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--plan);
+  background: var(--plan-soft);
+  border-radius: var(--r-s);
+}
+
+/* ---------- boshqaruv ---------- */
+.controls {
+  display: grid;
+  gap: 10px;
+  padding: 14px 20px 18px;
+  border-top: 1px solid var(--line);
+}
+.mic {
+  position: relative;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gov-deep);
+  background: var(--gov-soft);
+  border: 1px solid var(--gov);
+  border-radius: var(--r-s);
+  overflow: hidden;
+  transition:
+    background var(--t-fast) var(--ease),
+    color var(--t-fast) var(--ease);
+}
+.mic::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--live);
+  opacity: calc(var(--lvl, 0) * 0.35);
+  transition: opacity 80ms linear;
+}
+.mic > * {
+  position: relative;
+}
+.micOn {
+  color: #fff;
+  background: var(--live);
+  border-color: var(--live);
+}
+.textForm {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+}
+.textForm .iconBtn {
+  width: 42px;
+  height: 42px;
+}

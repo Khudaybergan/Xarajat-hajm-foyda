@@ -1,0 +1,2313 @@
+/* ============================================================
+   Slaydlar. Barcha o‘lchamlar 1600×900 sahna uchun (px) —
+   sahna ekranga moslab yaxlit masshtablanadi.
+   ============================================================ */
+
+/* ---------- umumiy qolip ---------- */
+.frame {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 72px 26px;
+}
+.kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.kicker::before {
+  content: '';
+  width: 34px;
+  height: 2px;
+  background: var(--brass);
+}
+.title {
+  margin-top: 10px;
+  font-family: var(--font-display);
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: -0.005em;
+}
+.lead {
+  margin-top: 10px;
+  max-width: 1280px;
+  font-size: 21px;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+.body {
+  flex: 1;
+  min-height: 0;
+  margin-top: 26px;
+}
+.label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.label b {
+  color: var(--ink);
+}
+.stack {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+}
+.cols2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- segmentli tanlagich ---------- */
+.seg {
+  align-self: flex-start;
+  display: inline-flex;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+  background: var(--surface);
+  overflow: hidden;
+}
+.segBtn {
+  padding: 11px 16px;
+  font-size: 15.5px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  transition:
+    background var(--t-fast) var(--ease),
+    color var(--t-fast) var(--ease);
+}
+.segBtn + .segBtn {
+  border-left: 1px solid var(--line-strong);
+}
+.segBtn:hover {
+  background: var(--paper-2);
+}
+.segOn,
+.segOn:hover {
+  background: var(--gov-deep);
+  color: #fff;
+}
+
+/* ---------- muqova ---------- */
+.cover {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 620px;
+  align-items: center;
+  gap: 40px;
+  padding: 0 72px 0 96px;
+}
+.coverTitle {
+  margin-top: 22px;
+  font-family: var(--font-display);
+  font-size: 76px;
+  font-weight: 700;
+  line-height: 1.07;
+  letter-spacing: -0.01em;
+}
+.coverLead {
+  margin-top: 22px;
+  max-width: 640px;
+  font-size: 24px;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+.coverMeta {
+  display: flex;
+  gap: 56px;
+  margin-top: 38px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line-strong);
+}
+.coverMeta dt {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.coverMeta dd {
+  margin-top: 6px;
+  font-size: 21px;
+  font-weight: 700;
+}
+.coverActions {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  margin-top: 42px;
+}
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 24px 16px 28px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--gov-deep);
+  border-radius: var(--r-s);
+  transition:
+    background var(--t-fast) var(--ease),
+    transform var(--t-fast) var(--ease);
+}
+.cta:hover {
+  background: var(--petrol);
+  transform: translateX(2px);
+}
+.hint {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+.orbitArt {
+  width: 620px;
+  height: 620px;
+  overflow: visible;
+}
+.artOrbit {
+  fill: none;
+  stroke: var(--ink);
+  stroke-dasharray: 1 7;
+  opacity: 0.16;
+}
+.artEdge {
+  fill: none;
+  stroke: var(--petrol);
+  stroke-width: 1.4;
+  opacity: 0.5;
+}
+.artPulse {
+  fill: var(--petrol);
+}
+.artNode {
+  fill: #fff;
+  stroke: var(--line-strong);
+  stroke-width: 1.2;
+}
+.artIcon {
+  color: var(--gov-deep);
+}
+.artCoreDash {
+  fill: none;
+  stroke: var(--brass);
+  opacity: 0.75;
+}
+.artCore {
+  fill: #fff;
+  stroke: var(--line-strong);
+}
+.artCoreIcon {
+  color: var(--brass);
+}
+.artCoreText {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  fill: var(--ink);
+}
+
+/* ---------- kirish slaydlari ---------- */
+.quote {
+  margin: 0;
+  min-height: 330px;
+  padding: 36px 40px;
+  font-family: var(--font-display);
+  font-size: 31px;
+  line-height: 1.42;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-top: 3px solid var(--gov-deep);
+  border-radius: var(--r-s);
+  animation: rise 0.4s var(--ease) both;
+}
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 172px;
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+  transition:
+    border-color var(--t-fast) var(--ease),
+    box-shadow var(--t-fast) var(--ease),
+    transform var(--t-fast) var(--ease);
+}
+.tile:hover {
+  border-color: var(--gov);
+  box-shadow: var(--shadow-m);
+  transform: translateY(-2px);
+}
+.tileTall {
+  min-height: 232px;
+}
+.tileIcon {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  color: var(--gov-deep);
+  background: var(--paper-2);
+  border-radius: var(--r-s);
+}
+.tileName {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.22;
+}
+.tileSub {
+  font-size: 18.5px;
+  color: var(--muted);
+}
+.checkList,
+.benefits {
+  display: grid;
+  gap: 12px;
+}
+.checkList li,
+.benefits li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 17px 20px;
+  font-size: 21px;
+  line-height: 1.35;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+  animation: rise 0.45s var(--ease) both;
+}
+.checkMark {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  color: var(--live);
+  background: var(--live-soft);
+  border-radius: 50%;
+}
+
+/* ---------- xarita slaydi ---------- */
+.mapSlide {
+  position: relative;
+  height: 100%;
+  padding: 20px 72px 0;
+}
+.mapHead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 62px;
+}
+.mapTitle {
+  margin-top: 4px;
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+.mapTools {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.mapHint {
+  padding: 7px 12px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gov-deep);
+  background: var(--gov-soft);
+  border-radius: var(--r-s);
+}
+
+/* ---------- asosiy turlar ---------- */
+.cols3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.typeCard {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 470px;
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+  animation: rise 0.5s var(--ease) both;
+  transition:
+    border-color var(--t-fast) var(--ease),
+    box-shadow var(--t-fast) var(--ease);
+}
+.typeCard:hover {
+  border-color: var(--gov);
+  box-shadow: var(--shadow-m);
+}
+.typeArt {
+  position: relative;
+  height: 150px;
+  display: grid;
+  place-items: center;
+  color: var(--gov-deep);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r-s);
+}
+.typeArt svg {
+  height: 110px;
+  width: auto;
+}
+.typeArt span {
+  position: absolute;
+  right: 12px;
+  bottom: 8px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+.miniAxis {
+  fill: none;
+  stroke: var(--line-strong);
+  stroke-width: 1;
+}
+.miniLine {
+  fill: none;
+  stroke: var(--gov);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+.typeName {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.typeBody {
+  flex: 1;
+  font-size: 20.5px;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+.keyLine {
+  padding: 20px 26px;
+  font-family: var(--font-display);
+  font-size: 24px;
+  line-height: 1.4;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-top: 3px solid var(--gov-deep);
+  border-radius: var(--r-s);
+}
+.checkList b {
+  font-weight: 700;
+}
+
+/* ---------- toifa slaydlari ---------- */
+.catWrap {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.catGrid {
+  flex: 1;
+  max-height: 440px;
+  display: grid;
+  gap: 20px;
+}
+.catCard {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+  animation: rise 0.5s var(--ease) both;
+  transition:
+    border-color var(--t-fast) var(--ease),
+    box-shadow var(--t-fast) var(--ease);
+}
+.catCard:hover {
+  border-color: var(--gov);
+  box-shadow: var(--shadow-m);
+}
+.catHead {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.catName {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.catDesc {
+  font-size: 22px;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+.catItems {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.catItems li {
+  padding: 10px 15px;
+  font-size: 20px;
+  line-height: 1.3;
+  background: var(--petrol-soft);
+  border-radius: var(--r-s);
+}
+.catShare {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+  gap: 14px;
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.catShare span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.catShare b {
+  font-family: var(--font-display);
+  font-size: 22px;
+}
+.catShare i {
+  height: 8px;
+  background: var(--paper-2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.catShare u {
+  display: block;
+  height: 100%;
+  background: var(--gov);
+  border-radius: 4px;
+}
+.catShare em {
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+/* bitta toifali slayd: chapda ta’rif, o‘ngda misollar */
+.catSolo .catCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  column-gap: 56px;
+  padding: 36px 40px;
+}
+.catSolo .catCard > div:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 1 / -1;
+}
+.catSolo .catDesc {
+  font-family: var(--font-display);
+  font-size: 27px;
+  color: var(--ink);
+}
+.catSolo .catItems {
+  flex-direction: column;
+}
+.catSolo .catItems li {
+  padding: 16px 20px;
+  font-size: 21px;
+}
+.catSolo .catShare {
+  grid-column: 1;
+}
+
+/* ---------- guruhlash ---------- */
+.colsGroups {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 52px;
+  align-items: start;
+}
+.pairList {
+  margin-top: 12px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+}
+.pairRow {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 20px;
+  min-height: 62px;
+  padding: 8px 20px;
+  font-size: 18.5px;
+  line-height: 1.3;
+  transition: background var(--t-fast) var(--ease);
+}
+.pairRow + .pairRow {
+  border-top: 1px solid var(--line);
+}
+.pairRow:hover {
+  background: var(--gov-soft);
+}
+.pairKinds {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  white-space: nowrap;
+}
+.pairKinds b {
+  padding: 5px 12px;
+  font-size: 16.5px;
+  color: var(--gov-deep);
+  background: var(--gov-soft);
+  border-radius: var(--r-s);
+}
+.pairKinds i {
+  font-size: 15px;
+  color: var(--faint);
+}
+.accordion {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+.accItem {
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+  transition: border-color var(--t-fast) var(--ease);
+}
+.accOpen {
+  border-color: var(--gov);
+}
+.accBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 18px;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: left;
+}
+.accNo {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--brass);
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 18px 16px 42px;
+  animation: rise 0.3s var(--ease) both;
+}
+.chip {
+  padding: 6px 12px;
+  font-size: 16px;
+  color: var(--ink);
+  background: var(--petrol-soft);
+  border-radius: var(--r-s);
+}
+
+/* ---------- diagrammalar ---------- */
+.colsChart {
+  display: grid;
+  grid-template-columns: 880px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.chart {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.chartLive {
+  cursor: crosshair;
+  touch-action: none;
+}
+.gridLine {
+  stroke: var(--line);
+  stroke-width: 1;
+}
+.axis {
+  stroke: var(--line-strong);
+  stroke-width: 1;
+}
+.tickText {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  fill: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.axisTitle {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  fill: var(--muted);
+}
+.bar {
+  fill: var(--gov);
+  transition: fill var(--t-fast) var(--ease);
+}
+.barHot {
+  fill: var(--gov-deep);
+}
+.barDim {
+  opacity: 0.45;
+}
+.barValue {
+  font-size: 19px;
+  font-weight: 700;
+  fill: var(--ink);
+}
+.catText {
+  font-size: 16.5px;
+  fill: var(--ink-soft);
+}
+.hit {
+  fill: transparent;
+  outline: none;
+  cursor: pointer;
+}
+.series {
+  fill: none;
+  stroke: var(--gov);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  animation: rise 0.35s var(--ease) both;
+}
+.guide {
+  stroke: var(--brass);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 5;
+}
+.guideText {
+  font-size: 14.5px;
+  fill: var(--ink-soft);
+  paint-order: stroke;
+  stroke: var(--paper);
+  stroke-width: 4px;
+}
+.cross {
+  stroke: var(--ink);
+  stroke-width: 1;
+  stroke-dasharray: 3 4;
+  opacity: 0.4;
+}
+.marker {
+  fill: var(--gov-deep);
+  stroke: var(--paper);
+  stroke-width: 3;
+}
+.readout,
+.simSide {
+  display: flex;
+  flex-direction: column;
+}
+.readout {
+  gap: 10px;
+  padding: 28px 30px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+}
+.readoutName {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+}
+.bigNum {
+  font-family: var(--font-display);
+  font-size: 68px;
+  font-weight: 700;
+  line-height: 1.05;
+  font-variant-numeric: tabular-nums;
+}
+.bigNum small {
+  font-family: var(--font-sans);
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--muted);
+}
+.share {
+  height: 8px;
+  background: var(--paper-2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.share i {
+  display: block;
+  height: 100%;
+  background: var(--gov);
+  border-radius: 4px;
+  transition: width var(--t-med) var(--ease);
+}
+.readoutNote {
+  min-height: 52px;
+  font-size: 18px;
+  color: var(--ink-soft);
+}
+.insight {
+  padding: 14px 18px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  background: var(--plan-soft);
+  border-radius: var(--r-s);
+}
+.insight b {
+  display: block;
+  margin-bottom: 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--plan);
+}
+
+/* ---------- xarajatlar xulqi modeli ---------- */
+.colsSim {
+  display: grid;
+  grid-template-columns: 820px 1fr;
+  gap: 44px;
+  align-items: start;
+}
+.simSide {
+  gap: 18px;
+}
+.formulaRow {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-height: 84px;
+  padding: 14px 20px;
+  background: var(--gov-soft);
+  border-radius: var(--r-s);
+}
+.formulaRow strong {
+  flex: none;
+  min-width: 132px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 30px;
+  color: var(--gov-deep);
+}
+.formulaRow span {
+  font-size: 16.5px;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+.sliderRow {
+  display: grid;
+  gap: 10px;
+}
+.sliderRow input[type='range'] {
+  width: 100%;
+  height: 26px;
+  margin: 0;
+  accent-color: var(--gov-deep);
+  cursor: pointer;
+}
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.kpis > div {
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+}
+.kpis dt {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.kpis dd {
+  margin-top: 6px;
+  font-family: var(--font-display);
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.kpis small {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+/* ---------- tannarx kalkulyatori ---------- */
+.colsFlow {
+  display: grid;
+  grid-template-columns: 1fr 430px;
+  gap: 44px;
+  align-items: start;
+}
+.statement {
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+}
+.stRow {
+  display: grid;
+  grid-template-columns: 30px 1fr auto;
+  align-items: center;
+  height: 50px;
+  padding: 0 18px;
+  font-size: 18px;
+}
+.stRow + .stRow {
+  border-top: 1px solid var(--line);
+}
+.stSign {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--muted);
+}
+.stTotal {
+  font-weight: 700;
+  background: var(--gov-soft);
+}
+.stTotal .stSign {
+  color: var(--gov-deep);
+}
+.stValue {
+  min-width: 132px;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 25px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.stepper {
+  display: inline-flex;
+  align-items: center;
+}
+.stepper button {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  color: var(--ink-soft);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+  background: var(--surface);
+  transition:
+    background var(--t-fast) var(--ease),
+    color var(--t-fast) var(--ease);
+}
+.stepper button:hover {
+  background: var(--gov-deep);
+  color: #fff;
+}
+.stepper output {
+  width: 64px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 17px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.stages {
+  display: grid;
+  gap: 14px;
+}
+.stage {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 12px;
+  row-gap: 6px;
+  align-items: baseline;
+  padding: 18px 22px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+}
+.stageNo {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--brass);
+}
+.stageName {
+  font-size: 17px;
+  color: var(--ink-soft);
+}
+.stageValue {
+  grid-column: 1 / -1;
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+.stageValue small {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--muted);
+}
+.stageBar {
+  grid-column: 1 / -1;
+  height: 6px;
+  background: var(--paper-2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.stageBar i {
+  display: block;
+  height: 100%;
+  background: var(--gov);
+  border-radius: 3px;
+  transition: width var(--t-med) var(--ease);
+}
+.stageReset {
+  display: flex;
+  justify-content: flex-end;
+}
+.ghostBtn {
+  padding: 9px 14px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+  background: var(--surface);
+  transition:
+    background var(--t-fast) var(--ease),
+    color var(--t-fast) var(--ease);
+}
+.ghostBtn:hover {
+  background: var(--gov-deep);
+  color: #fff;
+}
+
+/* ---------- hisobga olish usullari ---------- */
+.colsMethods {
+  display: grid;
+  grid-template-columns: 580px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.quoteSm {
+  padding: 28px 30px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-top: 3px solid var(--gov-deep);
+  border-radius: var(--r-s);
+  animation: rise 0.4s var(--ease) both;
+}
+.quoteSm h3 {
+  font-family: var(--font-display);
+  font-size: 25px;
+  line-height: 1.25;
+}
+.quoteSm p {
+  margin-top: 12px;
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.zones {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 16px;
+}
+.zone {
+  min-height: 400px;
+  padding: 22px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+}
+.zoneMain {
+  border-top: 3px solid var(--petrol);
+}
+.zone ul {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+.comp {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 16px;
+  font-size: 18px;
+  line-height: 1.3;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r-s);
+  animation: rise 0.4s var(--ease) both;
+}
+.comp svg {
+  flex: none;
+  color: var(--live);
+}
+.compFixed {
+  background: var(--brass-soft);
+}
+.compOut {
+  background: var(--plan-soft);
+}
+.compOut svg {
+  color: var(--plan);
+}
+.zoneEmpty {
+  margin-top: 16px;
+  font-size: 17.5px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* ---------- javobgarlik markazlari ---------- */
+.centers {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.centerRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.center {
+  width: 100%;
+  height: 226px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 22px;
+  text-align: left;
+  background: var(--surface-2);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+  transition:
+    border-color var(--t-fast) var(--ease),
+    background var(--t-fast) var(--ease),
+    box-shadow var(--t-fast) var(--ease);
+}
+.center:hover {
+  border-color: var(--gov);
+}
+.centerOn {
+  background: var(--surface);
+  border-color: var(--gov-deep);
+  box-shadow:
+    inset 0 3px 0 var(--gov-deep),
+    var(--shadow-m);
+}
+.centerNo {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--brass);
+}
+.centerName {
+  font-family: var(--font-display);
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.centerUnits {
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.centerDetail {
+  display: grid;
+  grid-template-columns: 430px 1fr;
+  gap: 44px;
+  align-items: center;
+  min-height: 170px;
+  padding: 26px 30px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+  animation: rise 0.35s var(--ease) both;
+}
+.scope {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+.scope li {
+  padding: 8px 14px;
+  font-size: 16.5px;
+  color: var(--faint);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--r-s);
+}
+.scope .scopeOn {
+  font-weight: 700;
+  color: #fff;
+  background: var(--gov-deep);
+  border: 1px solid var(--gov-deep);
+}
+.centerBody {
+  font-size: 20.5px;
+  line-height: 1.5;
+}
+
+/* ---------- materiallarni baholash ---------- */
+.colsInv {
+  display: grid;
+  grid-template-columns: 1fr 560px;
+  gap: 48px;
+  align-items: start;
+}
+.batches {
+  display: grid;
+  gap: 12px;
+}
+.batch {
+  display: grid;
+  grid-template-columns: 170px 1fr 130px;
+  align-items: center;
+  gap: 16px;
+}
+.batchName {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.batchName small,
+.batchUsed small {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted);
+}
+.batchBar {
+  position: relative;
+  height: 30px;
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r-s);
+  overflow: hidden;
+}
+.batchBar i {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: var(--gov);
+  transition: width var(--t-med) var(--ease);
+}
+.batchBar .fromRight {
+  left: auto;
+  right: 0;
+}
+.batchUsed {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 600;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.methodText {
+  font-size: 17.5px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+}
+.table th,
+.table td {
+  padding: 15px 18px;
+  text-align: right;
+}
+.table th:first-child {
+  text-align: left;
+}
+.table thead th {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.table tbody tr {
+  border-top: 1px solid var(--line);
+  cursor: pointer;
+  transition: background var(--t-fast) var(--ease);
+}
+.table tbody tr:hover {
+  background: var(--surface-2);
+}
+.table tbody th {
+  font-size: 19px;
+  font-weight: 700;
+}
+.table tbody td {
+  font-family: var(--font-display);
+  font-size: 25px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.table .rowOn,
+.table .rowOn:hover {
+  background: var(--gov-soft);
+}
+.table .rowOn th {
+  color: var(--gov-deep);
+}
+.table tfoot td {
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+  text-align: left;
+}
+
+/* ---------- boshqarish jarayoni ---------- */
+.process {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+.steps {
+  display: flex;
+}
+.stepItem {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.stepItem:last-child {
+  flex: 0.86;
+}
+.step {
+  flex: 1;
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 22px;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+  transition:
+    background var(--t-med) var(--ease),
+    color var(--t-med) var(--ease),
+    border-color var(--t-med) var(--ease);
+}
+.stepNo {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--brass);
+}
+.stepName {
+  font-family: var(--font-display);
+  font-size: 23px;
+  font-weight: 700;
+}
+.stepDone {
+  border-color: var(--gov);
+}
+.stepOn {
+  color: #fff;
+  background: var(--gov-deep);
+  border-color: var(--gov-deep);
+}
+.stepArrow {
+  flex: none;
+  margin: 0 7px;
+  color: var(--faint);
+}
+.benefits {
+  grid-template-columns: 1fr 1fr;
+  margin-top: 14px;
+}
+.benefits li {
+  font-size: 19.5px;
+}
+.benefits li {
+  min-height: 96px;
+  font-size: 22px;
+}
+.benefits li:last-child {
+  grid-column: 1 / -1;
+}
+.benefitNo {
+  flex: none;
+  min-width: 34px;
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--brass);
+}
+
+/* ---------- xulosa ---------- */
+.summary {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  padding-top: 8px;
+}
+.conclusions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.conclusions li {
+  min-height: 270px;
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+  animation: rise 0.5s var(--ease) both;
+}
+.conNo {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--brass);
+}
+.conclusions p {
+  margin-top: 16px;
+  font-size: 21px;
+  line-height: 1.5;
+}
+.chain {
+  display: flex;
+  align-items: center;
+  margin-top: 14px;
+}
+.chain li {
+  display: flex;
+  align-items: center;
+}
+.chain span {
+  padding: 13px 22px;
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--gov-deep);
+  border-radius: var(--r-s);
+}
+
+/* ---------- minnatdorchilik ---------- */
+.thanks {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.thanksTitle {
+  margin-top: 26px;
+  font-family: var(--font-display);
+  font-size: 88px;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+.thanksQuote {
+  margin-top: 28px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 30px;
+  color: var(--ink-soft);
+}
+.thanksMeta {
+  margin-top: 56px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line-strong);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ============================================================
+   CVP taqdimoti uchun qo‘shimcha qoliplar
+   ============================================================ */
+
+/* ---------- zanjir va reja ---------- */
+.stepSub {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+.stepOn .stepSub {
+  color: var(--on-abyss);
+}
+.planList {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+.planList li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 18px;
+  font-size: 19.5px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+  animation: rise 0.45s var(--ease) both;
+}
+.planList .benefitNo {
+  font-size: 26px;
+  min-width: 26px;
+}
+
+/* ---------- savollar ---------- */
+.qaGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.qaGrid .tile {
+  min-height: 250px;
+  padding: 28px;
+  animation: rise 0.45s var(--ease) both;
+}
+.qaGrid .tileName {
+  font-size: 26px;
+}
+.qaGrid .tileSub {
+  margin-top: auto;
+  font-size: 19px;
+  color: var(--ink-soft);
+}
+.qaGrid li:nth-child(4) {
+  grid-column: 1 / 2;
+}
+.qaGrid li:nth-child(4),
+.qaGrid li:nth-child(5) {
+  min-height: 250px;
+}
+
+/* ---------- qaror bloki ---------- */
+.decision {
+  padding: 22px 26px;
+  font-family: var(--font-display);
+  font-size: 24px;
+  line-height: 1.4;
+  color: #fff;
+  background: var(--gov-deep);
+  border-radius: var(--r-s);
+  animation: rise 0.4s var(--ease) both;
+}
+.decision b {
+  display: block;
+  margin-bottom: 8px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--on-abyss-dim);
+}
+
+/* ---------- diagrammalar: zonalar va belgilar ---------- */
+.zoneFixed {
+  fill: var(--brass-soft);
+}
+.zoneLoss {
+  fill: var(--plan-soft);
+}
+.zoneGain {
+  fill: var(--live-soft);
+}
+.zoneText {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  fill: var(--muted);
+}
+.seriesAlt {
+  fill: none;
+  stroke: var(--plan);
+  stroke-width: 3;
+  stroke-linecap: round;
+  animation: rise 0.35s var(--ease) both;
+}
+.seriesLabel,
+.seriesLabelAlt {
+  font-size: 14.5px;
+  font-weight: 700;
+  fill: var(--gov);
+  paint-order: stroke;
+  stroke: var(--paper);
+  stroke-width: 4px;
+}
+.seriesLabelAlt {
+  fill: var(--plan);
+}
+.markerHollow {
+  fill: var(--paper);
+  stroke: var(--brass);
+  stroke-width: 3;
+}
+.markerBep {
+  fill: var(--brass);
+  stroke: var(--paper);
+  stroke-width: 3;
+}
+.markerAlt {
+  fill: var(--plan);
+  stroke: var(--paper);
+  stroke-width: 3;
+}
+.formulaRow span b {
+  color: var(--ink);
+}
+.behaviorList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.behaviorList li {
+  display: grid;
+  gap: 4px;
+  padding: 14px 16px;
+  font-size: 15.5px;
+  line-height: 1.35;
+  color: var(--ink-soft);
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+}
+.behaviorList b {
+  font-family: var(--font-display);
+  font-size: 19px;
+  color: var(--ink);
+}
+.neg {
+  color: var(--plan) !important;
+}
+.okText {
+  color: var(--live);
+}
+.stateBadge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-radius: var(--r-s);
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+}
+.stateBadge span {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.stateBadge b {
+  font-family: var(--font-display);
+  font-size: 22px;
+}
+.state_loss {
+  background: var(--plan-soft);
+  border-color: var(--plan);
+}
+.state_loss b {
+  color: var(--plan);
+}
+.state_gain {
+  background: var(--live-soft);
+  border-color: var(--live);
+}
+.state_gain b {
+  color: var(--live);
+}
+.state_zero {
+  background: var(--brass-soft);
+  border-color: var(--brass);
+}
+.state_zero b {
+  color: var(--brass);
+}
+
+/* ---------- kalkulyator: hisobot va bosqichlar ---------- */
+.stUnit {
+  margin-left: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+}
+.stOut {
+  width: 104px !important;
+}
+.formulaStrip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.formulaStrip span {
+  padding: 12px 14px;
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--ink-soft);
+  background: var(--gov-soft);
+  border-radius: var(--r-s);
+}
+.formulaStrip b {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--gov-deep);
+}
+.kpis2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 0;
+}
+.kpis2 > div {
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+}
+.kpis2 dt {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.kpis2 dd {
+  margin-top: 6px;
+  font-family: var(--font-display);
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.kpis2 small {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+}
+.colsTarget {
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  gap: 48px;
+  align-items: start;
+}
+.formulaBig {
+  padding: 20px 26px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 27px;
+  line-height: 1.3;
+  color: var(--gov-deep);
+  background: var(--gov-soft);
+  border-radius: var(--r-s);
+}
+.sliderRow .label b {
+  font-family: var(--font-display);
+  font-size: 17px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink);
+}
+.calcSteps {
+  display: grid;
+  gap: 10px;
+}
+.calcSteps li {
+  display: grid;
+  grid-template-columns: 34px 1fr auto;
+  align-items: center;
+  gap: 14px;
+  min-height: 62px;
+  padding: 10px 18px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+  animation: rise 0.4s var(--ease) both;
+}
+.calcHot {
+  border-color: var(--gov) !important;
+  box-shadow: inset 3px 0 0 var(--gov);
+}
+.calcName {
+  font-size: 17px;
+  line-height: 1.3;
+  color: var(--ink-soft);
+}
+.calcValue {
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.miniList {
+  display: grid;
+  gap: 8px;
+}
+.miniList li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  color: var(--ink-soft);
+}
+.miniList svg {
+  flex: none;
+  color: var(--live);
+}
+.readoutNote b {
+  color: var(--ink);
+}
+.answer {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- xavfsizlik marjasi va leveraj ---------- */
+.panelCard {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-height: 560px;
+  padding: 26px 28px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+  animation: rise 0.45s var(--ease) both;
+}
+.panelTitle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-size: 27px;
+  font-weight: 700;
+}
+.panelTitle svg {
+  color: var(--gov-deep);
+}
+.panelCard .kpis > div {
+  background: var(--surface-2);
+}
+.safetyBar {
+  position: relative;
+  display: flex;
+  height: 54px;
+  margin: 10px 0 40px;
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r-s);
+}
+.safetyLoss,
+.safetyMargin {
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: width var(--t-med) var(--ease);
+}
+.safetyLoss {
+  color: var(--plan);
+  background: var(--plan-soft);
+}
+.safetyMargin {
+  color: var(--live);
+  background: var(--live-soft);
+}
+.safetyTick {
+  position: absolute;
+  top: -8px;
+  bottom: -8px;
+  width: 2px;
+  background: var(--ink);
+  font-style: normal;
+}
+.safetyTick b {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--ink);
+}
+.leverRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.leverCell {
+  flex: 1;
+  display: grid;
+  gap: 6px;
+  padding: 14px 16px;
+  background: var(--surface-2);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+}
+.leverCell b {
+  font-family: var(--font-display);
+  font-size: 27px;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.leverCell small {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+}
+.leverHot {
+  background: var(--gov-soft);
+  border-color: var(--gov);
+}
+
+/* ---------- paket usuli ---------- */
+.colsMix {
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  gap: 48px;
+  align-items: start;
+}
+.mixCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.mixCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 20px 22px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+}
+.mixMd {
+  font-family: var(--font-display);
+  font-size: 25px;
+  font-weight: 700;
+}
+.mixMd small {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--muted);
+}
+.cellBar {
+  position: relative;
+  display: inline-block;
+  min-width: 150px;
+  padding: 4px 10px;
+  text-align: right;
+}
+.cellBar i {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: var(--gov-soft);
+  border-radius: var(--r-s);
+  z-index: 0;
+}
+.rankChip {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  font-family: var(--font-mono);
+  font-size: 16px;
+  color: #fff;
+  background: var(--gov-deep);
+  border-radius: 50%;
+}
+.chainSmall {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.chainItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.chainItem b {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  font-family: var(--font-display);
+  font-size: 20px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+  background: var(--surface-2);
+}
+.chainItem .chainOn {
+  color: #fff;
+  background: var(--gov-deep);
+  border-color: var(--gov-deep);
+}
+
+/* ---------- parametr ta’siri ---------- */
+.effectList {
+  display: grid;
+  gap: 12px;
+}
+.effectRow {
+  display: grid;
+  grid-template-columns: 1.2fr auto 1fr 1fr;
+  align-items: center;
+  gap: 18px;
+  min-height: 78px;
+  padding: 12px 24px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+  animation: rise 0.4s var(--ease) both;
+}
+.effectChange {
+  font-family: var(--font-display);
+  font-size: 23px;
+  font-weight: 700;
+}
+.effectCell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  font-size: 18.5px;
+  font-weight: 700;
+  border-radius: var(--r-s);
+}
+.dirUp {
+  color: var(--live);
+  background: var(--live-soft);
+}
+.dirDown {
+  color: var(--plan);
+  background: var(--plan-soft);
+}
+.dirEq {
+  color: var(--ink-soft);
+  background: var(--paper-2);
+}
+
+/* ---------- ssenariylar ---------- */
+.cellInput {
+  min-width: 190px;
+}
+.cellInput input[type='range'] {
+  width: 110px;
+  height: 22px;
+  margin: 0 10px 0 0;
+  vertical-align: middle;
+  accent-color: var(--gov-deep);
+  cursor: pointer;
+}
+.cellInput span {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 600;
+}
+.table td.cellInput {
+  font-family: var(--font-sans);
+  font-size: 16px;
+}
+.warnIcon {
+  flex: none;
+  margin-right: 10px;
+  vertical-align: -3px;
+  color: var(--plan);
+}
+.pairBy {
+  display: inline-flex;
+  align-items: center;
+}
+.flowList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.flowList li {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 16px;
+  font-size: 17px;
+  font-weight: 700;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+}
+
+/* ---------- keys ---------- */
+.colsCase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.tableCompact th,
+.tableCompact td {
+  padding: 11px 16px;
+}
+.tableCompact tbody th {
+  font-size: 17.5px;
+  font-weight: 400;
+}
+.tableCompact tbody td {
+  font-size: 20px;
+  white-space: nowrap;
+}
+.rowStatic {
+  cursor: default !important;
+}
+.rowStatic:hover {
+  background: transparent !important;
+}
+.resNo {
+  width: 44px;
+  font-family: var(--font-mono) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: var(--brass) !important;
+  text-align: left !important;
+}
+.caseQuestions {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+.caseQuestions li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 18px;
+  font-size: 18px;
+  line-height: 1.35;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+  animation: rise 0.45s var(--ease) both;
+}
+.caseQuestions .benefitNo {
+  font-size: 26px;
+  min-width: 26px;
+}
+.colsCaseSol {
+  display: grid;
+  grid-template-columns: 1fr 460px;
+  gap: 44px;
+  align-items: start;
+}
+.solution {
+  display: grid;
+  gap: 16px;
+  animation: rise 0.35s var(--ease) both;
+}
+.solutionTitle {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+}
+.caseInputs {
+  display: grid;
+  gap: 10px;
+  padding: 18px 20px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r-s);
+}
+.caseInputRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 16.5px;
+}
+
+/* ---------- xulosa ---------- */
+.conclusions4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.conclusions4 li {
+  min-height: 230px;
+  padding: 24px;
+}
+.conclusions4 p {
+  font-size: 19.5px;
+}
+.controlList {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+.controlList li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  font-size: 19px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+}
+.controlList svg {
+  color: var(--gov-deep);
+}
+.summary .chain {
+  margin-top: 12px;
+}
+.books {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 20px;
+}
+.books li {
+  display: grid;
+  grid-template-columns: 28px 22px 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  font-size: 16px;
+  line-height: 1.4;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-s);
+}
+.bookIcon {
+  color: var(--gov-deep);
+}
+
+/* ---------- tuzatishlar: joylashuv ---------- */
+.qaGrid {
+  grid-template-columns: repeat(6, 1fr);
+}
+.qaGrid li {
+  grid-column: span 2;
+}
+.qaGrid li:nth-child(4) {
+  grid-column: 1 / 4;
+}
+.qaGrid li:nth-child(5) {
+  grid-column: 4 / 7;
+}
+.adviceList li {
+  min-height: 150px;
+  font-size: 22.5px;
+  line-height: 1.45;
+}
+.adviceList li:last-child {
+  min-height: 120px;
+}
+.conclusions4 li {
+  min-height: 262px;
+}
+.table tbody th,
+.table td.cellInput {
+  white-space: nowrap;
+}
+.cellInput input[type='range'] {
+  width: 120px;
+}
