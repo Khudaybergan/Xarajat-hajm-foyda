@@ -42,7 +42,7 @@ export function Effects() {
         ))}
       </ul>
       <p className={s.keyLine} style={{ marginTop: 22 }}>
-        Zararsizlikning kamayishi — yaxshi signal (yashil), oshishi — risk (sariq). Hajm o‘sishi nuqtani siljitmaydi, lekin foydani oshiradi.
+        Zararsizlikning kamayishi — yaxshi signal (yashil), oshishi — risk (qizg‘ish). Hajm o‘sishi nuqtani siljitmaydi, lekin foydani oshiradi.
       </p>
     </Frame>
   )

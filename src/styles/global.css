@@ -49,7 +49,7 @@ svg {
   display: block;
 }
 ::selection {
-  background: rgba(20, 69, 110, 0.18);
+  background: rgba(60, 203, 148, 0.3);
 }
 :focus-visible {
   outline: 2px solid var(--gov);

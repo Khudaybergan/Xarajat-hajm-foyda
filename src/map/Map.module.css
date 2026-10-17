@@ -42,9 +42,9 @@
   border-radius: var(--r-s);
   display: grid;
   place-items: center;
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 700;
-  color: #fff;
+  color: var(--on-accent);
   background: var(--gov-deep);
   transition:
     background var(--t-fast) var(--ease),
@@ -61,11 +61,11 @@
 }
 .crumbSep {
   color: var(--faint);
-  font-size: 13px;
+  font-size: 14px;
 }
 .crumb {
   font-family: var(--font-mono);
-  font-size: 12.5px;
+  font-size: 14px;
   letter-spacing: 0.04em;
   font-weight: 500;
   color: var(--gov-deep);
@@ -168,25 +168,25 @@ button.crumb:hover {
 }
 .coreTitle {
   font-family: var(--font-display);
-  font-size: 23px;
+  font-size: 25px;
   font-weight: 700;
   fill: var(--ink);
 }
 .coreMeta {
   font-family: var(--font-mono);
-  font-size: 9.5px;
+  font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   fill: var(--muted);
 }
 .coreName {
   font-family: var(--font-display);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   fill: var(--ink);
 }
 .coreNameSm {
-  font-size: 15px;
+  font-size: 16px;
 }
 
 /* ---------- tugunlar ---------- */
@@ -218,7 +218,7 @@ button.crumb:hover {
   opacity: 1;
 }
 .nodeBody {
-  fill: #ffffff;
+  fill: var(--surface-2);
   stroke: var(--line-strong);
   stroke-width: 1.2;
   transition:
@@ -247,26 +247,26 @@ button.crumb:hover {
 }
 .nodeLabel {
   font-family: var(--font-sans);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   fill: var(--ink);
   paint-order: stroke;
-  stroke: rgba(245, 244, 240, 0.92);
+  stroke: var(--paper);
   stroke-width: 4px;
 }
 .nodeLabelMulti {
-  font-size: 14.5px;
+  font-size: 16px;
 }
 .nodeBadge {
   fill: var(--gov-deep);
-  stroke: #fff;
+  stroke: var(--paper);
   stroke-width: 2;
 }
 .nodeBadgeText {
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 12px;
   font-weight: 600;
-  fill: #ffffff;
+  fill: var(--surface-2);
 }
 
 /* ---------- hover-kartochka ---------- */
@@ -310,19 +310,19 @@ button.crumb:hover {
   }
 }
 .tipName {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   line-height: 1.3;
 }
 .tipText {
-  font-size: 14.5px;
+  font-size: 16px;
   line-height: 1.45;
   color: var(--muted);
 }
 .tipCta {
   margin-top: 2px;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--gov-deep);
@@ -376,7 +376,7 @@ button.crumb:hover {
 }
 .panelIndex {
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
@@ -397,18 +397,18 @@ button.crumb:hover {
 }
 .panelClose:hover {
   background: var(--gov-deep);
-  color: #fff;
+  color: var(--on-accent);
 }
 .panelName {
   margin-top: 10px;
   font-family: var(--font-display);
-  font-size: 30px;
+  font-size: 33px;
   font-weight: 700;
   line-height: 1.18;
 }
 .panelTagline {
   margin-top: 10px;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.5;
   color: var(--ink-soft);
 }
@@ -423,14 +423,14 @@ button.crumb:hover {
 .blockTitle {
   margin-bottom: 10px;
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
 }
 .blockText {
-  font-size: 17.5px;
+  font-size: 19px;
   line-height: 1.55;
   color: var(--ink);
 }
@@ -441,7 +441,7 @@ button.crumb:hover {
 .blockList li {
   position: relative;
   padding: 9px 14px 9px 34px;
-  font-size: 17px;
+  font-size: 19px;
   line-height: 1.4;
   background: var(--surface-2);
   border: 1px solid var(--line);
@@ -459,7 +459,7 @@ button.crumb:hover {
 }
 .blockExample {
   padding: 14px 18px;
-  font-size: 16.5px;
+  font-size: 18px;
   line-height: 1.55;
   color: var(--ink-soft);
   background: var(--plan-soft);
@@ -469,7 +469,7 @@ button.crumb:hover {
   display: block;
   margin-bottom: 4px;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -486,12 +486,12 @@ button.crumb:hover {
 .blockFormula strong {
   flex: none;
   font-family: var(--font-display);
-  font-style: italic;
-  font-size: 28px;
+  font-weight: 800;
+  font-size: 31px;
   color: var(--gov-deep);
 }
 .blockFormula span {
-  font-size: 14.5px;
+  font-size: 16px;
   line-height: 1.45;
   color: var(--ink-soft);
 }

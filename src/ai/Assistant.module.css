@@ -35,7 +35,7 @@
 .kicker,
 .label {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -47,7 +47,7 @@
   gap: 10px;
   margin-top: 4px;
   font-family: var(--font-display);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
 }
 .dot {
@@ -90,7 +90,7 @@
 }
 .iconBtn:hover:not(:disabled) {
   background: var(--gov-deep);
-  color: #fff;
+  color: var(--on-accent);
 }
 .iconBtn:disabled {
   opacity: 0.4;
@@ -113,23 +113,23 @@
   height: 42px;
   padding: 0 12px;
   font: inherit;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--ink);
   background: var(--surface-2);
   border: 1px solid var(--line-strong);
   border-radius: var(--r-s);
 }
 .field small {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.4;
   color: var(--muted);
 }
 .primary {
   height: 44px;
   padding: 0 20px;
-  font-size: 15.5px;
+  font-size: 17px;
   font-weight: 700;
-  color: #fff;
+  color: var(--on-accent);
   background: var(--gov-deep);
   border-radius: var(--r-s);
   transition: background var(--t-fast) var(--ease);
@@ -153,7 +153,7 @@
   gap: 10px;
 }
 .empty p {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
   color: var(--ink-soft);
 }
@@ -165,7 +165,7 @@
 }
 .chip {
   padding: 8px 12px;
-  font-size: 14px;
+  font-size: 15px;
   color: var(--gov-deep);
   background: var(--gov-soft);
   border-radius: var(--r-s);
@@ -181,7 +181,7 @@
 .line {
   max-width: 92%;
   padding: 10px 14px;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.45;
   border-radius: var(--r-s);
   animation: rise 0.25s var(--ease) both;
@@ -198,7 +198,7 @@
 }
 .line_user {
   align-self: flex-end;
-  color: #fff;
+  color: var(--on-accent);
   background: var(--gov-deep);
 }
 .line_model {
@@ -213,26 +213,26 @@
   gap: 6px;
   padding: 4px 10px;
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 12px;
   color: var(--petrol);
   background: var(--petrol-soft);
 }
 .line_system {
   align-self: center;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--plan);
   background: var(--plan-soft);
 }
 .speaking {
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 12px;
   letter-spacing: 0.08em;
   color: var(--live);
 }
 .error {
   margin: 0 20px 8px;
   padding: 10px 12px;
-  font-size: 13.5px;
+  font-size: 14px;
   line-height: 1.4;
   color: var(--plan);
   background: var(--plan-soft);
@@ -253,7 +253,7 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--gov-deep);
   background: var(--gov-soft);
@@ -276,7 +276,7 @@
   position: relative;
 }
 .micOn {
-  color: #fff;
+  color: var(--on-accent);
   background: var(--live);
   border-color: var(--live);
 }

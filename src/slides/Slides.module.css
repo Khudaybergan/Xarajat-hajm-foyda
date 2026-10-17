@@ -15,7 +15,7 @@
   align-items: center;
   gap: 12px;
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -30,15 +30,15 @@
 .title {
   margin-top: 10px;
   font-family: var(--font-display);
-  font-size: 44px;
-  font-weight: 700;
-  line-height: 1.14;
-  letter-spacing: -0.005em;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
 }
 .lead {
   margin-top: 10px;
   max-width: 1280px;
-  font-size: 21px;
+  font-size: 23px;
   line-height: 1.45;
   color: var(--ink-soft);
 }
@@ -49,7 +49,7 @@
 }
 .label {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -92,7 +92,7 @@
 }
 .segBtn {
   padding: 11px 16px;
-  font-size: 15.5px;
+  font-size: 17px;
   font-weight: 700;
   letter-spacing: 0.01em;
   color: var(--ink-soft);
@@ -110,7 +110,7 @@
 .segOn,
 .segOn:hover {
   background: var(--gov-deep);
-  color: #fff;
+  color: var(--on-accent);
 }
 
 /* ---------- muqova ---------- */
@@ -125,15 +125,15 @@
 .coverTitle {
   margin-top: 22px;
   font-family: var(--font-display);
-  font-size: 76px;
-  font-weight: 700;
-  line-height: 1.07;
-  letter-spacing: -0.01em;
+  font-size: 80px;
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
 }
 .coverLead {
   margin-top: 22px;
   max-width: 640px;
-  font-size: 24px;
+  font-size: 26px;
   line-height: 1.45;
   color: var(--ink-soft);
 }
@@ -146,7 +146,7 @@
 }
 .coverMeta dt {
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -154,7 +154,7 @@
 }
 .coverMeta dd {
   margin-top: 6px;
-  font-size: 21px;
+  font-size: 23px;
   font-weight: 700;
 }
 .coverActions {
@@ -168,9 +168,9 @@
   align-items: center;
   gap: 10px;
   padding: 16px 24px 16px 28px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
-  color: #fff;
+  color: var(--on-accent);
   background: var(--gov-deep);
   border-radius: var(--r-s);
   transition:
@@ -183,7 +183,7 @@
 }
 .hint {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.08em;
   color: var(--muted);
 }
@@ -208,7 +208,7 @@
   fill: var(--petrol);
 }
 .artNode {
-  fill: #fff;
+  fill: var(--surface-2);
   stroke: var(--line-strong);
   stroke-width: 1.2;
 }
@@ -221,7 +221,7 @@
   opacity: 0.75;
 }
 .artCore {
-  fill: #fff;
+  fill: var(--surface-2);
   stroke: var(--line-strong);
 }
 .artCoreIcon {
@@ -229,7 +229,7 @@
 }
 .artCoreText {
   font-family: var(--font-display);
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
   fill: var(--ink);
 }
@@ -240,7 +240,7 @@
   min-height: 330px;
   padding: 36px 40px;
   font-family: var(--font-display);
-  font-size: 31px;
+  font-size: 34px;
   line-height: 1.42;
   background: var(--surface);
   border: 1px solid var(--line-strong);
@@ -286,12 +286,12 @@
 }
 .tileName {
   font-family: var(--font-display);
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
   line-height: 1.22;
 }
 .tileSub {
-  font-size: 18.5px;
+  font-size: 20px;
   color: var(--muted);
 }
 .checkList,
@@ -305,7 +305,7 @@
   align-items: center;
   gap: 16px;
   padding: 17px 20px;
-  font-size: 21px;
+  font-size: 23px;
   line-height: 1.35;
   background: var(--surface);
   border: 1px solid var(--line-strong);
@@ -338,8 +338,8 @@
 .mapTitle {
   margin-top: 4px;
   font-family: var(--font-display);
-  font-size: 34px;
-  font-weight: 700;
+  font-size: 37px;
+  font-weight: 800;
   line-height: 1.1;
 }
 .mapTools {
@@ -350,7 +350,7 @@
 .mapHint {
   padding: 7px 12px;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--gov-deep);
@@ -401,7 +401,7 @@
   right: 12px;
   bottom: 8px;
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--faint);
@@ -419,20 +419,20 @@
 }
 .typeName {
   font-family: var(--font-display);
-  font-size: 28px;
+  font-size: 31px;
   font-weight: 700;
   line-height: 1.2;
 }
 .typeBody {
   flex: 1;
-  font-size: 20.5px;
+  font-size: 23px;
   line-height: 1.45;
   color: var(--ink-soft);
 }
 .keyLine {
   padding: 20px 26px;
   font-family: var(--font-display);
-  font-size: 24px;
+  font-size: 26px;
   line-height: 1.4;
   background: var(--surface);
   border: 1px solid var(--line-strong);
@@ -480,12 +480,12 @@
 }
 .catName {
   font-family: var(--font-display);
-  font-size: 28px;
+  font-size: 31px;
   font-weight: 700;
   line-height: 1.2;
 }
 .catDesc {
-  font-size: 22px;
+  font-size: 24px;
   line-height: 1.45;
   color: var(--ink-soft);
 }
@@ -497,7 +497,7 @@
 }
 .catItems li {
   padding: 10px 15px;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 1.3;
   background: var(--petrol-soft);
   border-radius: var(--r-s);
@@ -513,7 +513,7 @@
 }
 .catShare span {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -521,7 +521,7 @@
 }
 .catShare b {
   font-family: var(--font-display);
-  font-size: 22px;
+  font-size: 24px;
 }
 .catShare i {
   height: 8px;
@@ -538,7 +538,7 @@
 .catShare em {
   font-family: var(--font-mono);
   font-style: normal;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--ink-soft);
 }
@@ -556,7 +556,7 @@
 }
 .catSolo .catDesc {
   font-family: var(--font-display);
-  font-size: 27px;
+  font-size: 30px;
   color: var(--ink);
 }
 .catSolo .catItems {
@@ -564,7 +564,7 @@
 }
 .catSolo .catItems li {
   padding: 16px 20px;
-  font-size: 21px;
+  font-size: 23px;
 }
 .catSolo .catShare {
   grid-column: 1;
@@ -590,7 +590,7 @@
   gap: 20px;
   min-height: 62px;
   padding: 8px 20px;
-  font-size: 18.5px;
+  font-size: 20px;
   line-height: 1.3;
   transition: background var(--t-fast) var(--ease);
 }
@@ -608,13 +608,13 @@
 }
 .pairKinds b {
   padding: 5px 12px;
-  font-size: 16.5px;
+  font-size: 18px;
   color: var(--gov-deep);
   background: var(--gov-soft);
   border-radius: var(--r-s);
 }
 .pairKinds i {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--faint);
 }
 .accordion {
@@ -637,7 +637,7 @@
   align-items: center;
   gap: 14px;
   padding: 15px 18px;
-  font-size: 19px;
+  font-size: 21px;
   font-weight: 700;
   line-height: 1.3;
   text-align: left;
@@ -645,7 +645,7 @@
 .accNo {
   flex: none;
   font-family: var(--font-mono);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--brass);
 }
@@ -658,7 +658,7 @@
 }
 .chip {
   padding: 6px 12px;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--ink);
   background: var(--petrol-soft);
   border-radius: var(--r-s);
@@ -690,13 +690,13 @@
 }
 .tickText {
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 14px;
   fill: var(--muted);
   font-variant-numeric: tabular-nums;
 }
 .axisTitle {
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   fill: var(--muted);
@@ -712,12 +712,12 @@
   opacity: 0.45;
 }
 .barValue {
-  font-size: 19px;
+  font-size: 21px;
   font-weight: 700;
   fill: var(--ink);
 }
 .catText {
-  font-size: 16.5px;
+  font-size: 18px;
   fill: var(--ink-soft);
 }
 .hit {
@@ -739,7 +739,7 @@
   stroke-dasharray: 5 5;
 }
 .guideText {
-  font-size: 14.5px;
+  font-size: 16px;
   fill: var(--ink-soft);
   paint-order: stroke;
   stroke: var(--paper);
@@ -770,19 +770,19 @@
 }
 .readoutName {
   font-family: var(--font-display);
-  font-size: 28px;
+  font-size: 31px;
   font-weight: 700;
 }
 .bigNum {
   font-family: var(--font-display);
-  font-size: 68px;
+  font-size: 75px;
   font-weight: 700;
   line-height: 1.05;
   font-variant-numeric: tabular-nums;
 }
 .bigNum small {
   font-family: var(--font-sans);
-  font-size: 19px;
+  font-size: 21px;
   font-weight: 400;
   color: var(--muted);
 }
@@ -801,12 +801,12 @@
 }
 .readoutNote {
   min-height: 52px;
-  font-size: 18px;
+  font-size: 20px;
   color: var(--ink-soft);
 }
 .insight {
   padding: 14px 18px;
-  font-size: 17px;
+  font-size: 19px;
   line-height: 1.5;
   color: var(--ink-soft);
   background: var(--plan-soft);
@@ -816,7 +816,7 @@
   display: block;
   margin-bottom: 4px;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -831,14 +831,14 @@
   align-items: start;
 }
 .simSide {
-  gap: 18px;
+  gap: 14px;
 }
 .formulaRow {
   display: flex;
   align-items: center;
   gap: 20px;
-  min-height: 84px;
-  padding: 14px 20px;
+  min-height: 72px;
+  padding: 12px 20px;
   background: var(--gov-soft);
   border-radius: var(--r-s);
 }
@@ -846,12 +846,12 @@
   flex: none;
   min-width: 132px;
   font-family: var(--font-display);
-  font-style: italic;
-  font-size: 30px;
-  color: var(--gov-deep);
+  font-weight: 800;
+  font-size: 33px;
+  color: var(--gov);
 }
 .formulaRow span {
-  font-size: 16.5px;
+  font-size: 18px;
   line-height: 1.45;
   color: var(--ink-soft);
 }
@@ -879,7 +879,7 @@
 }
 .kpis dt {
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -888,7 +888,7 @@
 .kpis dd {
   margin-top: 6px;
   font-family: var(--font-display);
-  font-size: 27px;
+  font-size: 30px;
   font-weight: 700;
   line-height: 1.15;
   font-variant-numeric: tabular-nums;
@@ -896,7 +896,7 @@
 }
 .kpis small {
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 400;
   color: var(--muted);
 }
@@ -919,14 +919,14 @@
   align-items: center;
   height: 50px;
   padding: 0 18px;
-  font-size: 18px;
+  font-size: 20px;
 }
 .stRow + .stRow {
   border-top: 1px solid var(--line);
 }
 .stSign {
   font-family: var(--font-mono);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   color: var(--muted);
 }
@@ -941,7 +941,7 @@
   min-width: 132px;
   text-align: center;
   font-family: var(--font-display);
-  font-size: 25px;
+  font-size: 28px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
 }
@@ -964,13 +964,13 @@
 }
 .stepper button:hover {
   background: var(--gov-deep);
-  color: #fff;
+  color: var(--on-accent);
 }
 .stepper output {
   width: 64px;
   text-align: center;
   font-family: var(--font-mono);
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 600;
   font-variant-numeric: tabular-nums;
 }
@@ -991,25 +991,25 @@
 }
 .stageNo {
   font-family: var(--font-mono);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--brass);
 }
 .stageName {
-  font-size: 17px;
+  font-size: 19px;
   color: var(--ink-soft);
 }
 .stageValue {
   grid-column: 1 / -1;
   font-family: var(--font-display);
-  font-size: 40px;
+  font-size: 44px;
   font-weight: 700;
   line-height: 1.1;
   font-variant-numeric: tabular-nums;
 }
 .stageValue small {
   font-family: var(--font-sans);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   color: var(--muted);
 }
@@ -1034,7 +1034,7 @@
 .ghostBtn {
   padding: 9px 14px;
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1048,7 +1048,7 @@
 }
 .ghostBtn:hover {
   background: var(--gov-deep);
-  color: #fff;
+  color: var(--on-accent);
 }
 
 /* ---------- hisobga olish usullari ---------- */
@@ -1068,12 +1068,12 @@
 }
 .quoteSm h3 {
   font-family: var(--font-display);
-  font-size: 25px;
+  font-size: 28px;
   line-height: 1.25;
 }
 .quoteSm p {
   margin-top: 12px;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 1.5;
   color: var(--ink-soft);
 }
@@ -1102,7 +1102,7 @@
   align-items: center;
   gap: 12px;
   padding: 15px 16px;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.3;
   background: var(--surface-2);
   border: 1px solid var(--line);
@@ -1124,7 +1124,7 @@
 }
 .zoneEmpty {
   margin-top: 16px;
-  font-size: 17.5px;
+  font-size: 19px;
   line-height: 1.5;
   color: var(--muted);
 }
@@ -1169,18 +1169,18 @@
 }
 .centerNo {
   font-family: var(--font-mono);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--brass);
 }
 .centerName {
   font-family: var(--font-display);
-  font-size: 25px;
+  font-size: 28px;
   font-weight: 700;
   line-height: 1.2;
 }
 .centerUnits {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.45;
   color: var(--muted);
 }
@@ -1204,19 +1204,19 @@
 }
 .scope li {
   padding: 8px 14px;
-  font-size: 16.5px;
+  font-size: 18px;
   color: var(--faint);
   border: 1px dashed var(--line-strong);
   border-radius: var(--r-s);
 }
 .scope .scopeOn {
   font-weight: 700;
-  color: #fff;
+  color: var(--on-accent);
   background: var(--gov-deep);
   border: 1px solid var(--gov-deep);
 }
 .centerBody {
-  font-size: 20.5px;
+  font-size: 23px;
   line-height: 1.5;
 }
 
@@ -1238,7 +1238,7 @@
   gap: 16px;
 }
 .batchName {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   line-height: 1.25;
 }
@@ -1246,7 +1246,7 @@
 .batchUsed small {
   display: block;
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 400;
   color: var(--muted);
 }
@@ -1272,13 +1272,13 @@
 }
 .batchUsed {
   font-family: var(--font-mono);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 .methodText {
-  font-size: 17.5px;
+  font-size: 19px;
   line-height: 1.5;
   color: var(--ink-soft);
 }
@@ -1298,7 +1298,7 @@
 }
 .table thead th {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1313,12 +1313,12 @@
   background: var(--surface-2);
 }
 .table tbody th {
-  font-size: 19px;
+  font-size: 21px;
   font-weight: 700;
 }
 .table tbody td {
   font-family: var(--font-display);
-  font-size: 25px;
+  font-size: 28px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
 }
@@ -1332,7 +1332,7 @@
 .table tfoot td {
   border-top: 1px solid var(--line);
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 13px;
   color: var(--muted);
   text-align: left;
 }
@@ -1373,20 +1373,20 @@
 }
 .stepNo {
   font-family: var(--font-mono);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--brass);
 }
 .stepName {
   font-family: var(--font-display);
-  font-size: 23px;
+  font-size: 25px;
   font-weight: 700;
 }
 .stepDone {
   border-color: var(--gov);
 }
 .stepOn {
-  color: #fff;
+  color: var(--on-accent);
   background: var(--gov-deep);
   border-color: var(--gov-deep);
 }
@@ -1400,11 +1400,11 @@
   margin-top: 14px;
 }
 .benefits li {
-  font-size: 19.5px;
+  font-size: 21px;
 }
 .benefits li {
   min-height: 96px;
-  font-size: 22px;
+  font-size: 24px;
 }
 .benefits li:last-child {
   grid-column: 1 / -1;
@@ -1413,7 +1413,7 @@
   flex: none;
   min-width: 34px;
   font-family: var(--font-display);
-  font-size: 36px;
+  font-size: 40px;
   font-weight: 700;
   line-height: 1;
   color: var(--brass);
@@ -1441,14 +1441,14 @@
 }
 .conNo {
   font-family: var(--font-display);
-  font-size: 48px;
+  font-size: 53px;
   font-weight: 700;
   line-height: 1;
   color: var(--brass);
 }
 .conclusions p {
   margin-top: 16px;
-  font-size: 21px;
+  font-size: 23px;
   line-height: 1.5;
 }
 .chain {
@@ -1463,9 +1463,9 @@
 .chain span {
   padding: 13px 22px;
   font-family: var(--font-display);
-  font-size: 21px;
+  font-size: 23px;
   font-weight: 700;
-  color: #fff;
+  color: var(--on-accent);
   background: var(--gov-deep);
   border-radius: var(--r-s);
 }
@@ -1482,16 +1482,16 @@
 .thanksTitle {
   margin-top: 26px;
   font-family: var(--font-display);
-  font-size: 88px;
-  font-weight: 700;
+  font-size: 92px;
+  font-weight: 800;
   line-height: 1.08;
   letter-spacing: -0.01em;
 }
 .thanksQuote {
   margin-top: 28px;
   font-family: var(--font-display);
-  font-style: italic;
-  font-size: 30px;
+  font-weight: 500;
+  font-size: 33px;
   color: var(--ink-soft);
 }
 .thanksMeta {
@@ -1499,7 +1499,7 @@
   padding-top: 22px;
   border-top: 1px solid var(--line-strong);
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
@@ -1512,7 +1512,7 @@
 /* ---------- zanjir va reja ---------- */
 .stepSub {
   font-family: var(--font-mono);
-  font-size: 12.5px;
+  font-size: 14px;
   letter-spacing: 0.04em;
   color: var(--muted);
 }
@@ -1529,14 +1529,14 @@
   align-items: center;
   gap: 16px;
   padding: 12px 18px;
-  font-size: 19.5px;
+  font-size: 21px;
   background: var(--surface);
   border: 1px solid var(--line-strong);
   border-radius: var(--r-s);
   animation: rise 0.45s var(--ease) both;
 }
 .planList .benefitNo {
-  font-size: 26px;
+  font-size: 29px;
   min-width: 26px;
 }
 
@@ -1552,11 +1552,11 @@
   animation: rise 0.45s var(--ease) both;
 }
 .qaGrid .tileName {
-  font-size: 26px;
+  font-size: 29px;
 }
 .qaGrid .tileSub {
   margin-top: auto;
-  font-size: 19px;
+  font-size: 21px;
   color: var(--ink-soft);
 }
 .qaGrid li:nth-child(4) {
@@ -1571,9 +1571,9 @@
 .decision {
   padding: 22px 26px;
   font-family: var(--font-display);
-  font-size: 24px;
+  font-size: 26px;
   line-height: 1.4;
-  color: #fff;
+  color: var(--on-accent);
   background: var(--gov-deep);
   border-radius: var(--r-s);
   animation: rise 0.4s var(--ease) both;
@@ -1582,7 +1582,7 @@
   display: block;
   margin-bottom: 8px;
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -1601,7 +1601,7 @@
 }
 .zoneText {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   fill: var(--muted);
@@ -1615,7 +1615,7 @@
 }
 .seriesLabel,
 .seriesLabelAlt {
-  font-size: 14.5px;
+  font-size: 16px;
   font-weight: 700;
   fill: var(--gov);
   paint-order: stroke;
@@ -1650,9 +1650,9 @@
 }
 .behaviorList li {
   display: grid;
-  gap: 4px;
-  padding: 14px 16px;
-  font-size: 15.5px;
+  gap: 3px;
+  padding: 12px 14px;
+  font-size: 15px;
   line-height: 1.35;
   color: var(--ink-soft);
   background: var(--surface);
@@ -1661,7 +1661,7 @@
 }
 .behaviorList b {
   font-family: var(--font-display);
-  font-size: 19px;
+  font-size: 18px;
   color: var(--ink);
 }
 .neg {
@@ -1681,13 +1681,13 @@
 }
 .stateBadge span {
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 0.06em;
   color: var(--muted);
 }
 .stateBadge b {
   font-family: var(--font-display);
-  font-size: 22px;
+  font-size: 24px;
 }
 .state_loss {
   background: var(--plan-soft);
@@ -1715,7 +1715,7 @@
 .stUnit {
   margin-left: 6px;
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 13px;
   color: var(--muted);
 }
 .stOut {
@@ -1728,7 +1728,7 @@
 }
 .formulaStrip span {
   padding: 12px 14px;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.4;
   color: var(--ink-soft);
   background: var(--gov-soft);
@@ -1737,7 +1737,7 @@
 .formulaStrip b {
   display: block;
   font-family: var(--font-display);
-  font-size: 18px;
+  font-size: 20px;
   color: var(--gov-deep);
 }
 .kpis2 {
@@ -1754,7 +1754,7 @@
 }
 .kpis2 dt {
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -1763,7 +1763,7 @@
 .kpis2 dd {
   margin-top: 6px;
   font-family: var(--font-display);
-  font-size: 27px;
+  font-size: 30px;
   font-weight: 700;
   line-height: 1.15;
   font-variant-numeric: tabular-nums;
@@ -1771,7 +1771,7 @@
 }
 .kpis2 small {
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 400;
   color: var(--muted);
 }
@@ -1784,16 +1784,16 @@
 .formulaBig {
   padding: 20px 26px;
   font-family: var(--font-display);
-  font-style: italic;
-  font-size: 27px;
+  font-weight: 700;
+  font-size: 30px;
   line-height: 1.3;
-  color: var(--gov-deep);
+  color: var(--gov);
   background: var(--gov-soft);
   border-radius: var(--r-s);
 }
 .sliderRow .label b {
   font-family: var(--font-display);
-  font-size: 17px;
+  font-size: 19px;
   letter-spacing: 0;
   text-transform: none;
   color: var(--ink);
@@ -1819,13 +1819,13 @@
   box-shadow: inset 3px 0 0 var(--gov);
 }
 .calcName {
-  font-size: 17px;
+  font-size: 19px;
   line-height: 1.3;
   color: var(--ink-soft);
 }
 .calcValue {
   font-family: var(--font-display);
-  font-size: 21px;
+  font-size: 23px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
@@ -1838,7 +1838,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--ink-soft);
 }
 .miniList svg {
@@ -1850,7 +1850,7 @@
 }
 .answer {
   font-family: var(--font-display);
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 700;
   line-height: 1.15;
   font-variant-numeric: tabular-nums;
@@ -1873,7 +1873,7 @@
   align-items: center;
   gap: 12px;
   font-family: var(--font-display);
-  font-size: 27px;
+  font-size: 30px;
   font-weight: 700;
 }
 .panelTitle svg {
@@ -1896,7 +1896,7 @@
   display: grid;
   place-items: center;
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   transition: width var(--t-med) var(--ease);
@@ -1924,7 +1924,7 @@
   transform: translateX(-50%);
   margin-top: 6px;
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   white-space: nowrap;
   color: var(--ink);
@@ -1945,14 +1945,14 @@
 }
 .leverCell b {
   font-family: var(--font-display);
-  font-size: 27px;
+  font-size: 30px;
   line-height: 1.1;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
 .leverCell small {
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 400;
   color: var(--muted);
 }
@@ -1985,12 +1985,12 @@
 }
 .mixMd {
   font-family: var(--font-display);
-  font-size: 25px;
+  font-size: 28px;
   font-weight: 700;
 }
 .mixMd small {
   font-family: var(--font-sans);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   color: var(--muted);
 }
@@ -2016,8 +2016,8 @@
   width: 38px;
   height: 38px;
   font-family: var(--font-mono);
-  font-size: 16px;
-  color: #fff;
+  font-size: 18px;
+  color: var(--on-accent);
   background: var(--gov-deep);
   border-radius: 50%;
 }
@@ -2037,13 +2037,13 @@
   width: 44px;
   height: 44px;
   font-family: var(--font-display);
-  font-size: 20px;
+  font-size: 22px;
   border: 1px solid var(--line-strong);
   border-radius: var(--r-s);
   background: var(--surface-2);
 }
 .chainItem .chainOn {
-  color: #fff;
+  color: var(--on-accent);
   background: var(--gov-deep);
   border-color: var(--gov-deep);
 }
@@ -2067,7 +2067,7 @@
 }
 .effectChange {
   font-family: var(--font-display);
-  font-size: 23px;
+  font-size: 25px;
   font-weight: 700;
 }
 .effectCell {
@@ -2075,7 +2075,7 @@
   align-items: center;
   gap: 10px;
   padding: 12px 16px;
-  font-size: 18.5px;
+  font-size: 20px;
   font-weight: 700;
   border-radius: var(--r-s);
 }
@@ -2106,12 +2106,12 @@
 }
 .cellInput span {
   font-family: var(--font-mono);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
 }
 .table td.cellInput {
   font-family: var(--font-sans);
-  font-size: 16px;
+  font-size: 18px;
 }
 .warnIcon {
   flex: none;
@@ -2134,7 +2134,7 @@
   align-items: center;
   gap: 10px;
   padding: 11px 16px;
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 700;
   background: var(--surface);
   border: 1px solid var(--line-strong);
@@ -2153,11 +2153,11 @@
   padding: 11px 16px;
 }
 .tableCompact tbody th {
-  font-size: 17.5px;
+  font-size: 19px;
   font-weight: 400;
 }
 .tableCompact tbody td {
-  font-size: 20px;
+  font-size: 22px;
   white-space: nowrap;
 }
 .rowStatic {
@@ -2169,7 +2169,7 @@
 .resNo {
   width: 44px;
   font-family: var(--font-mono) !important;
-  font-size: 13px !important;
+  font-size: 14px !important;
   font-weight: 600 !important;
   color: var(--brass) !important;
   text-align: left !important;
@@ -2184,7 +2184,7 @@
   align-items: center;
   gap: 16px;
   padding: 12px 18px;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.35;
   background: var(--surface);
   border: 1px solid var(--line-strong);
@@ -2192,7 +2192,7 @@
   animation: rise 0.45s var(--ease) both;
 }
 .caseQuestions .benefitNo {
-  font-size: 26px;
+  font-size: 29px;
   min-width: 26px;
 }
 .colsCaseSol {
@@ -2208,7 +2208,7 @@
 }
 .solutionTitle {
   font-family: var(--font-display);
-  font-size: 26px;
+  font-size: 29px;
   font-weight: 700;
 }
 .caseInputs {
@@ -2224,7 +2224,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  font-size: 16.5px;
+  font-size: 18px;
 }
 
 /* ---------- xulosa ---------- */
@@ -2236,7 +2236,7 @@
   padding: 24px;
 }
 .conclusions4 p {
-  font-size: 19.5px;
+  font-size: 21px;
 }
 .controlList {
   display: grid;
@@ -2248,7 +2248,7 @@
   align-items: center;
   gap: 12px;
   padding: 12px 16px;
-  font-size: 19px;
+  font-size: 21px;
   background: var(--surface);
   border: 1px solid var(--line-strong);
   border-radius: var(--r-s);
@@ -2270,7 +2270,7 @@
   align-items: center;
   gap: 12px;
   padding: 12px 16px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.4;
   background: var(--surface);
   border: 1px solid var(--line-strong);
@@ -2295,7 +2295,7 @@
 }
 .adviceList li {
   min-height: 150px;
-  font-size: 22.5px;
+  font-size: 25px;
   line-height: 1.45;
 }
 .adviceList li:last-child {

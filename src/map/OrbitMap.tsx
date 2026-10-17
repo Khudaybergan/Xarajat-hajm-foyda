@@ -194,8 +194,8 @@ export function OrbitMap({ root, onOpenNode, panelOpen }: Props) {
       >
         <defs>
           <radialGradient id="coreDisc" cx="50%" cy="38%">
-            <stop offset="0%" stopColor="#ffffff" />
-            <stop offset="100%" stopColor="#fbfaf7" />
+            <stop offset="0%" stopColor="#1e302b" />
+            <stop offset="100%" stopColor="#172824" />
           </radialGradient>
         </defs>
 
