@@ -64,7 +64,7 @@ target — maqsadli foyda kalkulyatori (operatsion yoki sof). risk — xavfsizli
 package — ko‘p mahsulotli paket usuli (A:B tarkibi). resource — cheklangan resurs jadvali (A, B, C). effects — parametr o‘zgarishi ta’siri jadvali.
 advertising — reklama qarori kalkulyatori. scenarios — ssenariylar jadvali va kutilayotgan foyda (ehtimollik slayderlari). limits — CVP cheklovlari.
 case — keys shartlari va savollari. case-solution — keys yechimi (topshiriqlar: md, bep, target, safety, dol, ad, price; shartlarni o‘zgartirish mumkin). case-results — keys yakuniy jadvali.
-summary — xulosa. advice — tavsiyalar. thanks — rahmat. x-discussion — guruh muhokamasi (zaxira). x-literature — adabiyotlar (zaxira).
+summary — xulosa. advice — tavsiyalar. thanks — rahmat.
 `
 
 export const SYSTEM_INSTRUCTION = `

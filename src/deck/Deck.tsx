@@ -237,7 +237,7 @@ export function Deck() {
                 <Icon id="close" size={18} />
               </button>
             </div>
-            {[SLIDES.slice(0, MAIN_COUNT), SLIDES.slice(MAIN_COUNT)].map((group, g) => (
+            {[SLIDES.slice(0, MAIN_COUNT), SLIDES.slice(MAIN_COUNT)].map((group, g) => group.length > 0 && (
               <div key={g}>
                 {g === 1 && <h3 className={s.overviewSub}>Qo‘shimcha slaydlar — savol-javob uchun</h3>}
                 <ol className={s.overviewGrid}>

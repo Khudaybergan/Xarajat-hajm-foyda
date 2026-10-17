@@ -2259,26 +2259,6 @@
 .summary .chain {
   margin-top: 12px;
 }
-.books {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px 20px;
-}
-.books li {
-  display: grid;
-  grid-template-columns: 28px 22px 1fr;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 16px;
-  font-size: 18px;
-  line-height: 1.4;
-  background: var(--surface);
-  border: 1px solid var(--line-strong);
-  border-radius: var(--r-s);
-}
-.bookIcon {
-  color: var(--gov-deep);
-}
 
 /* ---------- tuzatishlar: joylashuv ---------- */
 .qaGrid {

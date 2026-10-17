@@ -1,6 +1,6 @@
 /* Slaydlar reyestri: tartib, sarlavha va bo‘lim (mundarija va yuqori satr uchun).
    Asosiy oqim «5-mavzu. “Xarajat–hajm–foyda” tahlili va zararsizlik nuqtasi»
-   taqdimotining tartibini takrorlaydi; «Qo‘shimcha» — savol-javob uchun zaxira. */
+   taqdimotining tartibini takrorlaydi. */
 import type { ComponentType } from 'react'
 import type { SlideProps } from './Frame'
 import { Assumptions, Chain, Cover, Questions } from './Intro'
@@ -14,7 +14,7 @@ import { Package, Resource } from './Mix'
 import { Advertising, Effects } from './Decisions'
 import { Limits, Scenarios } from './Scenarios'
 import { CaseIntro, CaseResults, CaseSolution } from './Case'
-import { Advice, Discussion, Literature, Summary, Thanks } from './Closing'
+import { Advice, Summary, Thanks } from './Closing'
 
 export interface SlideDef {
   id: string
@@ -46,10 +46,8 @@ export const SLIDES: SlideDef[] = [
   { id: 'summary', title: 'Mavzu bo‘yicha xulosa', section: 'Yakun', Component: Summary },
   { id: 'advice', title: 'Umumiy tavsiyalar', section: 'Yakun', Component: Advice },
   { id: 'thanks', title: 'E’tiboringiz uchun rahmat', section: 'Yakun', Component: Thanks },
-  /* ---------- zaxira slaydlar: asosiy oqimga kirmaydi, faqat mundarijadan ochiladi ---------- */
-  { id: 'x-discussion', title: 'Guruhlar uchun interfaol muhokama', section: 'Qo‘shimcha', Component: Discussion },
-  { id: 'x-literature', title: 'Foydalanilgan adabiyotlar', section: 'Qo‘shimcha', Component: Literature },
 ]
 
-/** Asosiy oqimdagi slaydlar soni («Rahmat» bilan tugaydi) */
-export const MAIN_COUNT = SLIDES.findIndex((sl) => sl.section === 'Qo‘shimcha')
+/** Asosiy oqimdagi slaydlar soni («Rahmat» bilan tugaydi); «Qo‘shimcha» bo‘limi bo‘lsa, u oqimga kirmaydi */
+const extraAt = SLIDES.findIndex((sl) => sl.section === 'Qo‘shimcha')
+export const MAIN_COUNT = extraAt === -1 ? SLIDES.length : extraAt
